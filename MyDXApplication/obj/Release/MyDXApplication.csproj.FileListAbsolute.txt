@@ -1,0 +1,2 @@
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication\MyDXApplication\bin\Release\MyDXApplication.exe.config
+C:\Users\Joel Turcios\Desktop\RMS\MyDXApplication - Copy (2)\MyDXApplication\bin\Release\MyDXApplication.exe.config
