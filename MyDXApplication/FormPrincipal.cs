@@ -24,7 +24,7 @@ namespace MyDXApplication
     public partial class FormPrincipal : XtraForm
     {
         #region Variables Globales
-        private volatile bool _shouldStop;        
+        private volatile bool _shouldStop;
         private string _myConnectionString;
         private SqlConnection _myConnection;
         private List<Thread> _lstThreads = new List<Thread>();
@@ -99,13 +99,14 @@ namespace MyDXApplication
                                         if (_myConnection.State == ConnectionState.Open)
                                         {
                                             string query = @" INSERT INTO SIPBECAMO_BASCULAS (Descripcion, DireccionIp, Ubicacion, Blt_Proceso, Blt_Periodo, 
-                                                                                                    Blt_Bodega, Blt_Orden, Blt_Procede, Blt_Bloque, Blt_Calidad, Blt_Calidad_Interna) 
-                                                              VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}') ";
+                                                                                                    Blt_Bodega, Blt_Orden, Blt_Procede, Blt_Bloque, Blt_Calidad, Blt_Calidad_Interna, Marca) 
+                                                              VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}') ";
                                             query = string.Format(query, MyStringConv(row["DESCRIPCION"]), MyStringConv(row["DIRECCIONIP"]), MyStringConv(row["Ubicacion"]), 
                                                                           MyStringConv(row["Blt_Proceso"]), MyStringConv(row["Blt_Periodo"]), 
                                                                            MyStringConv(row["Blt_Bodega"]), MyStringConv(row["Blt_Orden"]), 
                                                                             MyStringConv(row["Blt_Procede"]), MyStringConv(row["Blt_Bloque"]), 
-                                                                             MyStringConv(row["Blt_Calidad"]), MyStringConv(row["Blt_Calidad_Interna"]));
+                                                                             MyStringConv(row["Blt_Calidad"]), MyStringConv(row["Blt_Calidad_Interna"]),
+                                                                              MyStringConv(row["Marca"]));
 
                                             SqlCommand command = new SqlCommand(query, _myConnection);
                                             command.ExecuteNonQuery();
@@ -123,14 +124,16 @@ namespace MyDXApplication
                                         if (_myConnection.State == ConnectionState.Open)
                                         {
                                             string query = @" UPDATE SIPBECAMO_BASCULAS SET DESCRIPCION = '{0}', DIRECCIONIP = '{1}', UBICACION = '{2}', Blt_Proceso = '{3}', Blt_Periodo = '{4}', 
-                                                                                                    Blt_Bodega = '{5}', Blt_Orden = '{6}', Blt_Procede = '{7}', Blt_Bloque = '{8}', Blt_Calidad = '{9}', Blt_Calidad_Interna = '{10}'
-                                                              WHERE SIPBECAMO_BASCULASID = {11} ";
+                                                                                                    Blt_Bodega = '{5}', Blt_Orden = '{6}', Blt_Procede = '{7}', Blt_Bloque = '{8}', Blt_Calidad = '{9}', 
+                                                                                                     Blt_Calidad_Interna = '{10}', Marca = '{11}'
+                                                              WHERE SIPBECAMO_BASCULASID = {12} ";
                                             query = string.Format(query, MyStringConv(row["DESCRIPCION"]), MyStringConv(row["DIRECCIONIP"]), 
                                                                           MyStringConv(row["Ubicacion"]), MyStringConv(row["Blt_Proceso"]), 
                                                                            MyStringConv(row["Blt_Periodo"]), MyStringConv(row["Blt_Bodega"]),
                                                                             MyStringConv(row["Blt_Orden"]), MyStringConv(row["Blt_Procede"]), 
                                                                              MyStringConv(row["Blt_Bloque"]), MyStringConv(row["Blt_Calidad"]), 
-                                                                              MyStringConv(row["Blt_Calidad_Interna"]), MyStringConv(row["SipBecamo_BasculasId"]));
+                                                                              MyStringConv(row["Blt_Calidad_Interna"]), MyStringConv(row["Marca"]),
+                                                                               MyStringConv(row["SipBecamo_BasculasId"]));
 
                                             SqlCommand command = new SqlCommand(query, _myConnection);
                                             command.ExecuteNonQuery();
@@ -220,7 +223,8 @@ namespace MyDXApplication
                                                  LTRIM(RTRIM(Blt_Proceso)) AS Blt_Proceso, LTRIM(RTRIM(Blt_Periodo)) AS Blt_Periodo, 
                                                  LTRIM(RTRIM(Blt_Bodega)) AS Blt_Bodega, LTRIM(RTRIM(Blt_Orden)) AS Blt_Orden, 
                                                  LTRIM(RTRIM(Blt_Procede)) AS Blt_Procede, LTRIM(RTRIM(Blt_Bloque)) AS Blt_Bloque, 
-                                                 LTRIM(RTRIM(Blt_Calidad)) AS Blt_Calidad, LTRIM(RTRIM(Blt_Calidad_Interna)) AS Blt_Calidad_Interna
+                                                 LTRIM(RTRIM(Blt_Calidad)) AS Blt_Calidad, LTRIM(RTRIM(Blt_Calidad_Interna)) AS Blt_Calidad_Interna,
+                                                 LTRIM(RTRIM(Marca)) AS Marca
                                           FROM SIPBECAMO_BASCULAS ";
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _myConnection);
 
@@ -327,19 +331,21 @@ namespace MyDXApplication
                                 Int32 bytes = stream.Read(data, 0, data.Length);
                                 responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
                                 InsertScaleInfo(responseData, bascula);
+                                //InsertPingResult(bascula, responseData);
                                 //MessageBox.Show("Recieved: " + responseData);
                                 //SetMemoText(responseData + "IP BASCULA: " + scaleIp + "   PUERTO: " + port + "   HORA: " + DateTime.Now);
 
                                 // Close everything.
                                 stream.Close();
                                 client.Close();
+
                                 
                             }
                         }
-                        //else
-                        //{
-                        //    InsertPingResult(bascula, pingResult.Status.ToString());
-                        //}
+                        else
+                        {
+                            InsertPingResult(bascula, pingResult.Status.ToString());
+                        }
                     }                    
                 }
                 catch (Exception ex) 
@@ -371,9 +377,9 @@ namespace MyDXApplication
 
                 if (localConnection.State == ConnectionState.Open)
                 {
-                    string gross = text.Substring(13, 7);                    
-                    string tare = text.Substring(37, 6);
-                    string net = text.Substring(61, 6);
+                    string gross = GetValorTipoPeso(bs.Marca, MyResource.Gross, text); //text.Substring(13, 7);
+                    string tare = GetValorTipoPeso(bs.Marca, MyResource.Tare, text); //text.Substring(37, 6);
+                    string net = GetValorTipoPeso(bs.Marca, MyResource.Net, text); //text.Substring(61, 6);
                     decimal grossDecimal = Convert.ToDecimal(gross);
                     decimal tareDecimal = Convert.ToDecimal(tare);
                     decimal netDecimal = Convert.ToDecimal(net);
@@ -395,7 +401,7 @@ namespace MyDXApplication
 
                     if (correlativoBoleta > 0)
                     {
-                        string query = @" INSERT INTO SipBecamo_BoletasR (Blt_Proceso, Blt_Periodo, Blt_Bodega, Blt_Serie, Blt_Numero, Blt_Fecha,
+                        string query = @" INSERT INTO SipBecamo_Boletas (Blt_Proceso, Blt_Periodo, Blt_Bodega, Blt_Serie, Blt_Numero, Blt_Fecha,
                                                                                 Blt_Orden, Blt_Trilla, Blt_Procede, Blt_Bloque, Blt_Calidad, 
                                                                                     Blt_Calidad_Interna, Blt_Bruto, Blt_Tara, Blt_Neto)
                                           VALUES('{0}', '{1}', '{2}', '{3}', {4}, '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', 
@@ -426,6 +432,7 @@ namespace MyDXApplication
                     //    }));
                     //}
                 }
+
                 localConnection.Close();
 
                 // Inserto en el GridView
@@ -440,15 +447,13 @@ namespace MyDXApplication
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error en funcion InsertScaleInfo()", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                XtraMessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error en funcion InsertScaleInfo()", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void InsertPingResult(Bascula bs, string pingResult)
         {
             try
             {
-                
-
                 // Conexion
                 BoletaEntidad nuevaBoleta = null;
                 string localConnectionString = "Data Source={0}; Initial Catalog={1}; {2}";
@@ -484,13 +489,13 @@ namespace MyDXApplication
                     if (correlativoBoleta > 0)
                     {
                         //SetCulture();
-                        string query = @" INSERT INTO SipBecamo_BoletasR (Blt_Proceso, Blt_Periodo, Blt_Bodega, Blt_Serie, Blt_Numero, Blt_Fecha,
+                        string query = @" INSERT INTO SipBecamo_Boletas (Blt_Proceso, Blt_Periodo, Blt_Bodega, Blt_Serie, Blt_Numero, Blt_Fecha,
                                                                                 Blt_Orden, Blt_Trilla, Blt_Procede, Blt_Bloque, Blt_Calidad, 
                                                                                     Blt_Calidad_Interna, Blt_Bruto, Blt_Tara, Blt_Neto)
                                           VALUES('{0}', '{1}', '{2}', '{3}', {4}, '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', 
                                                                                                                     {12}, {13}, {14}) ";
                         query = string.Format(query, bs.Blt_Proceso, bs.Blt_Periodo, bs.Blt_Bodega, "P1112B5", correlativoBoleta, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                                    bs.Blt_Orden, "-----", bs.Blt_Procede, bs.Blt_Bloque, bs.Blt_Calidad, bs.Blt_Calidad_Interna,
+                                                    bs.Blt_Orden, "-----", pingResult.Trim(), bs.Blt_Bloque, bs.Blt_Calidad, bs.Blt_Calidad_Interna,
                                                      150, 11, 139);
 
                         SqlCommand command = new SqlCommand(query, localConnection);
@@ -624,11 +629,11 @@ namespace MyDXApplication
                             string str_hasta = string.Empty;
                             DataSet ds = new DataSet();
 
-                            string query = @" SELECT * FROM SipBecamo_BoletasR BO
+                            string query = @" SELECT * FROM SipBecamo_Boletas BO
                                               INNER JOIN SipBecamo_Basculas BA ON (BA.Blt_Bodega = BO.Blt_Bodega)
                                               WHERE BO.BLT_FECHA BETWEEN '{0} 00:00' AND '{1} 23:59:59'
-                                              {2}
-                                              {3} 
+                                                    {2}
+                                                    {3} 
                                               ORDER BY Blt_Fecha DESC ";
 
                             if (basculaCmb.Text != "TODOS")
@@ -645,7 +650,6 @@ namespace MyDXApplication
 
                             query = string.Format(query, str_desde, str_hasta, str_bascula, str_bodega);
 
-
                             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _myConnection);
 
                             dataAdapter.Fill(ds);
@@ -653,7 +657,6 @@ namespace MyDXApplication
                             DsBasculas.Tables["TblReporte"].Clear();
                             if (ds != null && ds.Tables[0].Rows.Count > 0)
                                 DsBasculas.Tables["TblReporte"].Merge(ds.Tables[0]);
-
 
                             _myConnection.Close();
                         }
@@ -664,6 +667,23 @@ namespace MyDXApplication
             {
                 XtraMessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error en funcion CargarReporte()", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void CargarMarcas()
+        {
+            DataTable t = new DataTable();
+            t.Columns.Add("MARCA_BASCULA");
+
+            DataRow newRow1 = t.NewRow();
+            newRow1[0] = "Revuelta";
+            DataRow newRow2 = t.NewRow();
+            newRow2[0] = "Mettler Toledo";
+
+            t.Rows.Add(newRow1);
+            t.Rows.Add(newRow2);
+
+            cmbMarca.DataSource = t;
+            cmbMarca.DisplayMember = "MARCA_BASCULA";
+            cmbMarca.ValueMember = "MARCA_BASCULA";
         }
 
         private Bascula ObtenerBascula(int idBascula)
@@ -688,7 +708,8 @@ namespace MyDXApplication
                             bs = new Bascula(Convert.ToInt32(ds.Tables[0].Rows[0]["SipBecamo_BasculasId"]), ds.Tables[0].Rows[0]["Descripcion"].ToString(), ds.Tables[0].Rows[0]["DireccionIp"].ToString(),
                                                 ds.Tables[0].Rows[0]["Ubicacion"].ToString(), ds.Tables[0].Rows[0]["Blt_Proceso"].ToString(), ds.Tables[0].Rows[0]["Blt_Periodo"].ToString(),
                                                  ds.Tables[0].Rows[0]["Blt_Bodega"].ToString(), ds.Tables[0].Rows[0]["Blt_Orden"].ToString(), ds.Tables[0].Rows[0]["Blt_Procede"].ToString(),
-                                                 ds.Tables[0].Rows[0]["Blt_Bloque"].ToString(), ds.Tables[0].Rows[0]["Blt_Calidad"].ToString(), ds.Tables[0].Rows[0]["Blt_Calidad_Interna"].ToString());
+                                                 ds.Tables[0].Rows[0]["Blt_Bloque"].ToString(), ds.Tables[0].Rows[0]["Blt_Calidad"].ToString(), ds.Tables[0].Rows[0]["Blt_Calidad_Interna"].ToString(),
+                                                 ds.Tables[0].Rows[0]["Marca"].ToString());
                         }
 
                         _myConnection.Close();
@@ -727,7 +748,7 @@ namespace MyDXApplication
                 {
                     DataSet ds = new DataSet();
                     string query = @" SELECT MAX(Blt_Numero) AS ULTIMA_BOLETA
-                                      FROM SipBecamo_BoletasR 
+                                      FROM SipBecamo_Boletas
                                       WHERE Blt_Serie = '" + blt_Serie + "'";
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _myConnection);
 
@@ -754,6 +775,44 @@ namespace MyDXApplication
         {
             return obj.ToString().Trim();
         }
+        private string GetValorTipoPeso(string strMarca, string strTipoPeso, string scaleString)
+        {
+            try
+            {
+                string strValor = string.Empty;
+
+                switch (strTipoPeso)
+                {
+                    case "Gross":
+                        if (strMarca == MyResource.MettlerToledo)
+                            strValor = scaleString.Substring(5, 5);
+                        else
+                            strValor = scaleString.Substring(13, 7); // Si es Revuelta
+                    break;
+
+                    case "Tare":
+                        if (strMarca == MyResource.MettlerToledo)
+                            strValor = scaleString.Substring(21, 5);
+                        else
+                            strValor = scaleString.Substring(37, 6); // Si es Revuelta
+                    break;
+
+                    case "Net":
+                        if (strMarca == MyResource.MettlerToledo)
+                            strValor = scaleString.Substring(37, 7);
+                        else
+                            strValor = scaleString.Substring(61, 6); // Si es Revuelta
+                    break;
+                }
+
+                return strValor;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error en funcion GetValorTipoPeso()", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return string.Empty;
+            }
+        }
 
         private bool CheckRow(DataRow currentRow, int rowNum)
         {
@@ -772,6 +831,11 @@ namespace MyDXApplication
                 if (currentRow["UBICACION"].ToString() == string.Empty)
                 {
                     XtraMessageBox.Show("UBICACION no puede ir vacio en fila [" + rowNum + "]!", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return false;
+                }
+                if (currentRow["MARCA"].ToString() == string.Empty)
+                {
+                    XtraMessageBox.Show("La MARCA no puede ir vacia para bascula en fila [" + rowNum + "]!", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return false;
                 }
                 //if (currentRow.RowState == DataRowState.Added)
@@ -920,6 +984,7 @@ namespace MyDXApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             //SetCulture();
+            CargarMarcas();
             CargarMaestroBasculas();
             CargarThreats();
         }

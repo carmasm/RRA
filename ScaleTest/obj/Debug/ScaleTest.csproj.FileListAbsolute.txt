@@ -1,0 +1,6 @@
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\bin\Debug\ScaleTest.exe.config
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\bin\Debug\ScaleTest.exe
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\bin\Debug\ScaleTest.pdb
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\obj\Debug\ScaleTest.csprojResolveAssemblyReference.cache
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\obj\Debug\ScaleTest.exe
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\ScaleTest\obj\Debug\ScaleTest.pdb

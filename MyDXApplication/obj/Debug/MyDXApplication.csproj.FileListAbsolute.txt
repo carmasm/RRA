@@ -48,3 +48,15 @@ C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\MyDXAp
 C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\MyDXApplication\obj\Debug\MyDXApplication.csproj.GenerateResource.Cache
 C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\MyDXApplication\obj\Debug\MyDXApplication.exe.licenses
 C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\MyDXApplication\obj\Debug\MyDXApplication.csprojResolveAssemblyReference.cache
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\bin\Debug\MyDXApplication.exe.config
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.exe
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.pdb
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\bin\Debug\MyDXApplication.exe
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\bin\Debug\MyDXApplication.pdb
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.FormPrincipal.resources
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.FrmConfiguracion.resources
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.Properties.Resources.resources
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.csproj.GenerateResource.Cache
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.exe.licenses
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.MyResource.resources
+C:\Users\Armas\Documents\Visual Studio 2012\Projects\MyDXApplication - RC\RRA\MyDXApplication\obj\Debug\MyDXApplication.csprojResolveAssemblyReference.cache

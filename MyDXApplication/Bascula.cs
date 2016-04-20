@@ -14,7 +14,7 @@ namespace MyDXApplication
 
         public Bascula(int sipBecamo_BasculasId, string descripcion, string direccionIp, string ubicacion, string blt_Proceso,
                                 string blt_Periodo, string blt_Bodega, string blt_Orden, string blt_Procede, string blt_Bloque, string blt_Calidad,
-                                        string blt_Calidad_Interna)
+                                        string blt_Calidad_Interna, string marca)
         {
             SipBecamo_BasculasId = sipBecamo_BasculasId;
             Descripcion = descripcion;
@@ -28,6 +28,7 @@ namespace MyDXApplication
             Blt_Bloque = blt_Bloque;
             Blt_Calidad = blt_Calidad;
             Blt_Calidad_Interna = blt_Calidad_Interna;
+            Marca = marca;
         }
 
         public int SipBecamo_BasculasId { get; set; }
@@ -42,5 +43,6 @@ namespace MyDXApplication
         public string Blt_Bloque { get; set; }
         public string Blt_Calidad { get; set; }
         public string Blt_Calidad_Interna { get; set; }
+        public string Marca { get; set; }
     }
 }

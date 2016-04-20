@@ -46,19 +46,11 @@
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.configuracionBtn = new DevExpress.XtraEditors.SimpleButton();
             this.myTabControl = new DevExpress.XtraTab.XtraTabControl();
-            this.reportesTabPage = new DevExpress.XtraTab.XtraTabPage();
-            this.exportarBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.cargarReporteBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.bodegaCmb = new DevExpress.XtraEditors.LookUpEdit();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.basculaCmb = new DevExpress.XtraEditors.LookUpEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.hastaDtp = new DevExpress.XtraEditors.DateEdit();
-            this.desdeDtp = new DevExpress.XtraEditors.DateEdit();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.monitorTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridViewMonitor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.basculasTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.DsBasculas = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -73,6 +65,7 @@
             this.dataColumn10 = new System.Data.DataColumn();
             this.dataColumn11 = new System.Data.DataColumn();
             this.dataColumn12 = new System.Data.DataColumn();
+            this.dataColumn30 = new System.Data.DataColumn();
             this.dataTable2 = new System.Data.DataTable();
             this.dataColumn13 = new System.Data.DataColumn();
             this.dataColumn14 = new System.Data.DataColumn();
@@ -92,21 +85,6 @@
             this.dataColumn27 = new System.Data.DataColumn();
             this.dataColumn28 = new System.Data.DataColumn();
             this.dataColumn29 = new System.Data.DataColumn();
-            this.gridViewReporte = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDESCRIPCION1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_BODEGA1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_SERIE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_PERIODO1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_NUMERO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_FECHA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_BRUTO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_TARA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBLT_NETO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.monitorTabPage = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridViewMonitor = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.basculasTabPage = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.GridViewMaestroBasculas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSipBecamo_BasculasId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,7 +97,31 @@
             this.colBlt_Procede = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBlt_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBlt_Calidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBlt_Calidad_Interna = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMarca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbMarca = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.reportesTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.exportarBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.cargarReporteBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.bodegaCmb = new DevExpress.XtraEditors.LookUpEdit();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.basculaCmb = new DevExpress.XtraEditors.LookUpEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.hastaDtp = new DevExpress.XtraEditors.DateEdit();
+            this.desdeDtp = new DevExpress.XtraEditors.DateEdit();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridViewReporte = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDESCRIPCION1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_BODEGA1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_SERIE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_PERIODO1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_NUMERO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_FECHA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_BRUTO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_TARA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBLT_NETO = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -127,6 +129,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTabControl)).BeginInit();
             this.myTabControl.SuspendLayout();
+            this.monitorTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonitor)).BeginInit();
+            this.basculasTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DsBasculas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewMaestroBasculas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMarca)).BeginInit();
             this.reportesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -141,17 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.desdeDtp.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desdeDtp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DsBasculas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewReporte)).BeginInit();
-            this.monitorTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonitor)).BeginInit();
-            this.basculasTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewMaestroBasculas)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl
@@ -318,6 +321,402 @@
             this.monitorTabPage,
             this.basculasTabPage,
             this.reportesTabPage});
+            // 
+            // monitorTabPage
+            // 
+            this.monitorTabPage.Controls.Add(this.gridControl1);
+            this.monitorTabPage.Name = "monitorTabPage";
+            this.monitorTabPage.Size = new System.Drawing.Size(864, 688);
+            this.monitorTabPage.Text = "Monitor";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridViewMonitor;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(864, 688);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewMonitor});
+            this.gridControl1.DataSourceChanged += new System.EventHandler(this.gridControl1_DataSourceChanged);
+            // 
+            // gridViewMonitor
+            // 
+            this.gridViewMonitor.Appearance.GroupPanel.BackColor = System.Drawing.Color.Transparent;
+            this.gridViewMonitor.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewMonitor.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonitor.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridViewMonitor.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewMonitor.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gridViewMonitor.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridViewMonitor.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewMonitor.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewMonitor.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewMonitor.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewMonitor.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewMonitor.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewMonitor.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewMonitor.GridControl = this.gridControl1;
+            this.gridViewMonitor.GroupPanelText = "MONITOR";
+            this.gridViewMonitor.Name = "gridViewMonitor";
+            // 
+            // basculasTabPage
+            // 
+            this.basculasTabPage.Controls.Add(this.gridControl);
+            this.basculasTabPage.Name = "basculasTabPage";
+            this.basculasTabPage.Size = new System.Drawing.Size(864, 688);
+            this.basculasTabPage.Text = "Basculas";
+            // 
+            // gridControl
+            // 
+            this.gridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl.DataMember = "TblBasculas";
+            this.gridControl.DataSource = this.DsBasculas;
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControl.Location = new System.Drawing.Point(0, 0);
+            this.gridControl.MainView = this.GridViewMaestroBasculas;
+            this.gridControl.Name = "gridControl";
+            this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmbMarca});
+            this.gridControl.Size = new System.Drawing.Size(864, 688);
+            this.gridControl.TabIndex = 2;
+            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewMaestroBasculas});
+            // 
+            // DsBasculas
+            // 
+            this.DsBasculas.DataSetName = "NewDataSet";
+            this.DsBasculas.Tables.AddRange(new System.Data.DataTable[] {
+            this.dataTable1,
+            this.dataTable2,
+            this.dataTable3});
+            // 
+            // dataTable1
+            // 
+            this.dataTable1.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4,
+            this.dataColumn5,
+            this.dataColumn6,
+            this.dataColumn7,
+            this.dataColumn8,
+            this.dataColumn9,
+            this.dataColumn10,
+            this.dataColumn11,
+            this.dataColumn12,
+            this.dataColumn30});
+            this.dataTable1.TableName = "TblBasculas";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "SipBecamo_BasculasId";
+            this.dataColumn1.DataType = typeof(decimal);
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "Descripcion";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "DireccionIp";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "Ubicacion";
+            // 
+            // dataColumn5
+            // 
+            this.dataColumn5.ColumnName = "Blt_Proceso";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "Blt_Periodo";
+            // 
+            // dataColumn7
+            // 
+            this.dataColumn7.ColumnName = "Blt_Bodega";
+            // 
+            // dataColumn8
+            // 
+            this.dataColumn8.ColumnName = "Blt_Orden";
+            // 
+            // dataColumn9
+            // 
+            this.dataColumn9.ColumnName = "Blt_Procede";
+            // 
+            // dataColumn10
+            // 
+            this.dataColumn10.ColumnName = "Blt_Bloque";
+            // 
+            // dataColumn11
+            // 
+            this.dataColumn11.ColumnName = "Blt_Calidad";
+            // 
+            // dataColumn12
+            // 
+            this.dataColumn12.ColumnName = "Blt_Calidad_Interna";
+            // 
+            // dataColumn30
+            // 
+            this.dataColumn30.ColumnName = "Marca";
+            // 
+            // dataTable2
+            // 
+            this.dataTable2.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn13,
+            this.dataColumn14,
+            this.dataColumn15,
+            this.dataColumn16,
+            this.dataColumn17,
+            this.dataColumn18,
+            this.dataColumn19,
+            this.dataColumn20});
+            this.dataTable2.TableName = "TblMonitor";
+            // 
+            // dataColumn13
+            // 
+            this.dataColumn13.ColumnName = "BASCULA";
+            // 
+            // dataColumn14
+            // 
+            this.dataColumn14.ColumnName = "DIRECCION_IP";
+            // 
+            // dataColumn15
+            // 
+            this.dataColumn15.ColumnName = "FECHA";
+            this.dataColumn15.DataType = typeof(System.DateTime);
+            // 
+            // dataColumn16
+            // 
+            this.dataColumn16.ColumnName = "NUMERO_BOLETA";
+            this.dataColumn16.DataType = typeof(int);
+            // 
+            // dataColumn17
+            // 
+            this.dataColumn17.ColumnName = "SERIE_BOLETA";
+            // 
+            // dataColumn18
+            // 
+            this.dataColumn18.ColumnName = "BRUTO";
+            this.dataColumn18.DataType = typeof(decimal);
+            // 
+            // dataColumn19
+            // 
+            this.dataColumn19.ColumnName = "TARA";
+            this.dataColumn19.DataType = typeof(decimal);
+            // 
+            // dataColumn20
+            // 
+            this.dataColumn20.ColumnName = "NETO";
+            this.dataColumn20.DataType = typeof(decimal);
+            // 
+            // dataTable3
+            // 
+            this.dataTable3.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn21,
+            this.dataColumn22,
+            this.dataColumn23,
+            this.dataColumn24,
+            this.dataColumn25,
+            this.dataColumn26,
+            this.dataColumn27,
+            this.dataColumn28,
+            this.dataColumn29});
+            this.dataTable3.TableName = "TblReporte";
+            // 
+            // dataColumn21
+            // 
+            this.dataColumn21.ColumnName = "DESCRIPCION";
+            // 
+            // dataColumn22
+            // 
+            this.dataColumn22.ColumnName = "BLT_BODEGA";
+            // 
+            // dataColumn23
+            // 
+            this.dataColumn23.ColumnName = "BLT_SERIE";
+            // 
+            // dataColumn24
+            // 
+            this.dataColumn24.ColumnName = "BLT_PERIODO";
+            // 
+            // dataColumn25
+            // 
+            this.dataColumn25.ColumnName = "BLT_NUMERO";
+            this.dataColumn25.DataType = typeof(decimal);
+            // 
+            // dataColumn26
+            // 
+            this.dataColumn26.ColumnName = "BLT_FECHA";
+            this.dataColumn26.DataType = typeof(System.DateTime);
+            // 
+            // dataColumn27
+            // 
+            this.dataColumn27.ColumnName = "BLT_BRUTO";
+            this.dataColumn27.DataType = typeof(decimal);
+            // 
+            // dataColumn28
+            // 
+            this.dataColumn28.ColumnName = "BLT_TARA";
+            this.dataColumn28.DataType = typeof(decimal);
+            // 
+            // dataColumn29
+            // 
+            this.dataColumn29.ColumnName = "BLT_NETO";
+            this.dataColumn29.DataType = typeof(decimal);
+            // 
+            // GridViewMaestroBasculas
+            // 
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.BackColor = System.Drawing.Color.Black;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.Black;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseFont = true;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GridViewMaestroBasculas.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Options.UseFont = true;
+            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.GridViewMaestroBasculas.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GridViewMaestroBasculas.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.GridViewMaestroBasculas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.GridViewMaestroBasculas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSipBecamo_BasculasId,
+            this.colDescripcion,
+            this.colDireccionIp,
+            this.colUbicacion,
+            this.colBlt_Proceso,
+            this.colBlt_Periodo,
+            this.colBlt_Bodega,
+            this.colBlt_Orden,
+            this.colBlt_Procede,
+            this.colBlt_Bloque,
+            this.colBlt_Calidad,
+            this.colMarca});
+            this.GridViewMaestroBasculas.GridControl = this.gridControl;
+            this.GridViewMaestroBasculas.GroupPanelText = "MAESTRO BASCULAS";
+            this.GridViewMaestroBasculas.Name = "GridViewMaestroBasculas";
+            this.GridViewMaestroBasculas.OptionsView.ColumnAutoWidth = false;
+            // 
+            // colSipBecamo_BasculasId
+            // 
+            this.colSipBecamo_BasculasId.Caption = "MARCA";
+            this.colSipBecamo_BasculasId.FieldName = "SipBecamo_BasculasId";
+            this.colSipBecamo_BasculasId.Name = "colSipBecamo_BasculasId";
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.Caption = "DESCRIPCION";
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 0;
+            this.colDescripcion.Width = 150;
+            // 
+            // colDireccionIp
+            // 
+            this.colDireccionIp.Caption = "DIRECCION IP";
+            this.colDireccionIp.FieldName = "DireccionIp";
+            this.colDireccionIp.Name = "colDireccionIp";
+            this.colDireccionIp.Visible = true;
+            this.colDireccionIp.VisibleIndex = 1;
+            this.colDireccionIp.Width = 89;
+            // 
+            // colUbicacion
+            // 
+            this.colUbicacion.Caption = "UBICACION";
+            this.colUbicacion.FieldName = "Ubicacion";
+            this.colUbicacion.Name = "colUbicacion";
+            this.colUbicacion.Visible = true;
+            this.colUbicacion.VisibleIndex = 2;
+            this.colUbicacion.Width = 76;
+            // 
+            // colBlt_Proceso
+            // 
+            this.colBlt_Proceso.Caption = "PROCESO";
+            this.colBlt_Proceso.FieldName = "Blt_Proceso";
+            this.colBlt_Proceso.Name = "colBlt_Proceso";
+            this.colBlt_Proceso.Visible = true;
+            this.colBlt_Proceso.VisibleIndex = 3;
+            // 
+            // colBlt_Periodo
+            // 
+            this.colBlt_Periodo.Caption = "PERIODO";
+            this.colBlt_Periodo.FieldName = "Blt_Periodo";
+            this.colBlt_Periodo.Name = "colBlt_Periodo";
+            this.colBlt_Periodo.Visible = true;
+            this.colBlt_Periodo.VisibleIndex = 4;
+            // 
+            // colBlt_Bodega
+            // 
+            this.colBlt_Bodega.Caption = "BODEGA";
+            this.colBlt_Bodega.FieldName = "Blt_Bodega";
+            this.colBlt_Bodega.Name = "colBlt_Bodega";
+            this.colBlt_Bodega.Visible = true;
+            this.colBlt_Bodega.VisibleIndex = 5;
+            // 
+            // colBlt_Orden
+            // 
+            this.colBlt_Orden.Caption = "ORDEN";
+            this.colBlt_Orden.FieldName = "Blt_Orden";
+            this.colBlt_Orden.Name = "colBlt_Orden";
+            this.colBlt_Orden.Visible = true;
+            this.colBlt_Orden.VisibleIndex = 7;
+            // 
+            // colBlt_Procede
+            // 
+            this.colBlt_Procede.Caption = "PROCEDE";
+            this.colBlt_Procede.FieldName = "Blt_Procede";
+            this.colBlt_Procede.Name = "colBlt_Procede";
+            this.colBlt_Procede.Visible = true;
+            this.colBlt_Procede.VisibleIndex = 8;
+            // 
+            // colBlt_Bloque
+            // 
+            this.colBlt_Bloque.Caption = "BLOQUE";
+            this.colBlt_Bloque.FieldName = "Blt_Bloque";
+            this.colBlt_Bloque.Name = "colBlt_Bloque";
+            this.colBlt_Bloque.Visible = true;
+            this.colBlt_Bloque.VisibleIndex = 9;
+            // 
+            // colBlt_Calidad
+            // 
+            this.colBlt_Calidad.Caption = "CALIDAD";
+            this.colBlt_Calidad.FieldName = "Blt_Calidad";
+            this.colBlt_Calidad.Name = "colBlt_Calidad";
+            this.colBlt_Calidad.Visible = true;
+            this.colBlt_Calidad.VisibleIndex = 10;
+            this.colBlt_Calidad.Width = 82;
+            // 
+            // colMarca
+            // 
+            this.colMarca.Caption = "MARCA";
+            this.colMarca.ColumnEdit = this.cmbMarca;
+            this.colMarca.FieldName = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.Visible = true;
+            this.colMarca.VisibleIndex = 6;
+            this.colMarca.Width = 135;
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.AutoHeight = false;
+            this.cmbMarca.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.NullText = "Seleccione una marca...";
+            this.cmbMarca.ShowHeader = false;
             // 
             // reportesTabPage
             // 
@@ -489,185 +888,6 @@
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewReporte});
-            // 
-            // DsBasculas
-            // 
-            this.DsBasculas.DataSetName = "NewDataSet";
-            this.DsBasculas.Tables.AddRange(new System.Data.DataTable[] {
-            this.dataTable1,
-            this.dataTable2,
-            this.dataTable3});
-            // 
-            // dataTable1
-            // 
-            this.dataTable1.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn1,
-            this.dataColumn2,
-            this.dataColumn3,
-            this.dataColumn4,
-            this.dataColumn5,
-            this.dataColumn6,
-            this.dataColumn7,
-            this.dataColumn8,
-            this.dataColumn9,
-            this.dataColumn10,
-            this.dataColumn11,
-            this.dataColumn12});
-            this.dataTable1.TableName = "TblBasculas";
-            // 
-            // dataColumn1
-            // 
-            this.dataColumn1.ColumnName = "SipBecamo_BasculasId";
-            this.dataColumn1.DataType = typeof(decimal);
-            // 
-            // dataColumn2
-            // 
-            this.dataColumn2.ColumnName = "Descripcion";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "DireccionIp";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "Ubicacion";
-            // 
-            // dataColumn5
-            // 
-            this.dataColumn5.ColumnName = "Blt_Proceso";
-            // 
-            // dataColumn6
-            // 
-            this.dataColumn6.ColumnName = "Blt_Periodo";
-            // 
-            // dataColumn7
-            // 
-            this.dataColumn7.ColumnName = "Blt_Bodega";
-            // 
-            // dataColumn8
-            // 
-            this.dataColumn8.ColumnName = "Blt_Orden";
-            // 
-            // dataColumn9
-            // 
-            this.dataColumn9.ColumnName = "Blt_Procede";
-            // 
-            // dataColumn10
-            // 
-            this.dataColumn10.ColumnName = "Blt_Bloque";
-            // 
-            // dataColumn11
-            // 
-            this.dataColumn11.ColumnName = "Blt_Calidad";
-            // 
-            // dataColumn12
-            // 
-            this.dataColumn12.ColumnName = "Blt_Calidad_Interna";
-            // 
-            // dataTable2
-            // 
-            this.dataTable2.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn13,
-            this.dataColumn14,
-            this.dataColumn15,
-            this.dataColumn16,
-            this.dataColumn17,
-            this.dataColumn18,
-            this.dataColumn19,
-            this.dataColumn20});
-            this.dataTable2.TableName = "TblMonitor";
-            // 
-            // dataColumn13
-            // 
-            this.dataColumn13.ColumnName = "BASCULA";
-            // 
-            // dataColumn14
-            // 
-            this.dataColumn14.ColumnName = "DIRECCION_IP";
-            // 
-            // dataColumn15
-            // 
-            this.dataColumn15.ColumnName = "FECHA";
-            this.dataColumn15.DataType = typeof(System.DateTime);
-            // 
-            // dataColumn16
-            // 
-            this.dataColumn16.ColumnName = "NUMERO_BOLETA";
-            this.dataColumn16.DataType = typeof(int);
-            // 
-            // dataColumn17
-            // 
-            this.dataColumn17.ColumnName = "SERIE_BOLETA";
-            // 
-            // dataColumn18
-            // 
-            this.dataColumn18.ColumnName = "BRUTO";
-            this.dataColumn18.DataType = typeof(decimal);
-            // 
-            // dataColumn19
-            // 
-            this.dataColumn19.ColumnName = "TARA";
-            this.dataColumn19.DataType = typeof(decimal);
-            // 
-            // dataColumn20
-            // 
-            this.dataColumn20.ColumnName = "NETO";
-            this.dataColumn20.DataType = typeof(decimal);
-            // 
-            // dataTable3
-            // 
-            this.dataTable3.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn21,
-            this.dataColumn22,
-            this.dataColumn23,
-            this.dataColumn24,
-            this.dataColumn25,
-            this.dataColumn26,
-            this.dataColumn27,
-            this.dataColumn28,
-            this.dataColumn29});
-            this.dataTable3.TableName = "TblReporte";
-            // 
-            // dataColumn21
-            // 
-            this.dataColumn21.ColumnName = "DESCRIPCION";
-            // 
-            // dataColumn22
-            // 
-            this.dataColumn22.ColumnName = "BLT_BODEGA";
-            // 
-            // dataColumn23
-            // 
-            this.dataColumn23.ColumnName = "BLT_SERIE";
-            // 
-            // dataColumn24
-            // 
-            this.dataColumn24.ColumnName = "BLT_PERIODO";
-            // 
-            // dataColumn25
-            // 
-            this.dataColumn25.ColumnName = "BLT_NUMERO";
-            this.dataColumn25.DataType = typeof(decimal);
-            // 
-            // dataColumn26
-            // 
-            this.dataColumn26.ColumnName = "BLT_FECHA";
-            this.dataColumn26.DataType = typeof(System.DateTime);
-            // 
-            // dataColumn27
-            // 
-            this.dataColumn27.ColumnName = "BLT_BRUTO";
-            this.dataColumn27.DataType = typeof(decimal);
-            // 
-            // dataColumn28
-            // 
-            this.dataColumn28.ColumnName = "BLT_TARA";
-            this.dataColumn28.DataType = typeof(decimal);
-            // 
-            // dataColumn29
-            // 
-            this.dataColumn29.ColumnName = "BLT_NETO";
-            this.dataColumn29.DataType = typeof(decimal);
             // 
             // gridViewReporte
             // 
@@ -843,205 +1063,6 @@
             this.colBLT_NETO.VisibleIndex = 8;
             this.colBLT_NETO.Width = 117;
             // 
-            // monitorTabPage
-            // 
-            this.monitorTabPage.Controls.Add(this.gridControl1);
-            this.monitorTabPage.Name = "monitorTabPage";
-            this.monitorTabPage.Size = new System.Drawing.Size(864, 688);
-            this.monitorTabPage.Text = "Monitor";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridViewMonitor;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(864, 688);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewMonitor});
-            this.gridControl1.DataSourceChanged += new System.EventHandler(this.gridControl1_DataSourceChanged);
-            // 
-            // gridViewMonitor
-            // 
-            this.gridViewMonitor.Appearance.GroupPanel.BackColor = System.Drawing.Color.Transparent;
-            this.gridViewMonitor.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewMonitor.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonitor.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridViewMonitor.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridViewMonitor.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gridViewMonitor.Appearance.GroupPanel.Options.UseTextOptions = true;
-            this.gridViewMonitor.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridViewMonitor.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridViewMonitor.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewMonitor.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewMonitor.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridViewMonitor.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridViewMonitor.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridViewMonitor.GridControl = this.gridControl1;
-            this.gridViewMonitor.GroupPanelText = "MONITOR";
-            this.gridViewMonitor.Name = "gridViewMonitor";
-            // 
-            // basculasTabPage
-            // 
-            this.basculasTabPage.Controls.Add(this.gridControl);
-            this.basculasTabPage.Name = "basculasTabPage";
-            this.basculasTabPage.Size = new System.Drawing.Size(864, 688);
-            this.basculasTabPage.Text = "Basculas";
-            // 
-            // gridControl
-            // 
-            this.gridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl.DataMember = "TblBasculas";
-            this.gridControl.DataSource = this.DsBasculas;
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.MainView = this.GridViewMaestroBasculas;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(864, 688);
-            this.gridControl.TabIndex = 2;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewMaestroBasculas});
-            // 
-            // GridViewMaestroBasculas
-            // 
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.BackColor = System.Drawing.Color.Black;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.Black;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseFont = true;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.Options.UseTextOptions = true;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.GridViewMaestroBasculas.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Options.UseFont = true;
-            this.GridViewMaestroBasculas.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.GridViewMaestroBasculas.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.GridViewMaestroBasculas.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.GridViewMaestroBasculas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.GridViewMaestroBasculas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSipBecamo_BasculasId,
-            this.colDescripcion,
-            this.colDireccionIp,
-            this.colUbicacion,
-            this.colBlt_Proceso,
-            this.colBlt_Periodo,
-            this.colBlt_Bodega,
-            this.colBlt_Orden,
-            this.colBlt_Procede,
-            this.colBlt_Bloque,
-            this.colBlt_Calidad,
-            this.colBlt_Calidad_Interna});
-            this.GridViewMaestroBasculas.GridControl = this.gridControl;
-            this.GridViewMaestroBasculas.GroupPanelText = "MAESTRO BASCULAS";
-            this.GridViewMaestroBasculas.Name = "GridViewMaestroBasculas";
-            this.GridViewMaestroBasculas.OptionsView.ColumnAutoWidth = false;
-            // 
-            // colSipBecamo_BasculasId
-            // 
-            this.colSipBecamo_BasculasId.FieldName = "SipBecamo_BasculasId";
-            this.colSipBecamo_BasculasId.Name = "colSipBecamo_BasculasId";
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.Caption = "DESCRIPCION";
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 0;
-            this.colDescripcion.Width = 150;
-            // 
-            // colDireccionIp
-            // 
-            this.colDireccionIp.Caption = "DIRECCION IP";
-            this.colDireccionIp.FieldName = "DireccionIp";
-            this.colDireccionIp.Name = "colDireccionIp";
-            this.colDireccionIp.Visible = true;
-            this.colDireccionIp.VisibleIndex = 1;
-            this.colDireccionIp.Width = 89;
-            // 
-            // colUbicacion
-            // 
-            this.colUbicacion.Caption = "UBICACION";
-            this.colUbicacion.FieldName = "Ubicacion";
-            this.colUbicacion.Name = "colUbicacion";
-            this.colUbicacion.Visible = true;
-            this.colUbicacion.VisibleIndex = 2;
-            this.colUbicacion.Width = 76;
-            // 
-            // colBlt_Proceso
-            // 
-            this.colBlt_Proceso.Caption = "PROCESO";
-            this.colBlt_Proceso.FieldName = "Blt_Proceso";
-            this.colBlt_Proceso.Name = "colBlt_Proceso";
-            this.colBlt_Proceso.Visible = true;
-            this.colBlt_Proceso.VisibleIndex = 3;
-            // 
-            // colBlt_Periodo
-            // 
-            this.colBlt_Periodo.Caption = "PERIODO";
-            this.colBlt_Periodo.FieldName = "Blt_Periodo";
-            this.colBlt_Periodo.Name = "colBlt_Periodo";
-            this.colBlt_Periodo.Visible = true;
-            this.colBlt_Periodo.VisibleIndex = 4;
-            // 
-            // colBlt_Bodega
-            // 
-            this.colBlt_Bodega.Caption = "BODEGA";
-            this.colBlt_Bodega.FieldName = "Blt_Bodega";
-            this.colBlt_Bodega.Name = "colBlt_Bodega";
-            this.colBlt_Bodega.Visible = true;
-            this.colBlt_Bodega.VisibleIndex = 5;
-            // 
-            // colBlt_Orden
-            // 
-            this.colBlt_Orden.Caption = "ORDEN";
-            this.colBlt_Orden.FieldName = "Blt_Orden";
-            this.colBlt_Orden.Name = "colBlt_Orden";
-            this.colBlt_Orden.Visible = true;
-            this.colBlt_Orden.VisibleIndex = 6;
-            // 
-            // colBlt_Procede
-            // 
-            this.colBlt_Procede.Caption = "PROCEDE";
-            this.colBlt_Procede.FieldName = "Blt_Procede";
-            this.colBlt_Procede.Name = "colBlt_Procede";
-            this.colBlt_Procede.Visible = true;
-            this.colBlt_Procede.VisibleIndex = 7;
-            // 
-            // colBlt_Bloque
-            // 
-            this.colBlt_Bloque.Caption = "BLOQUE";
-            this.colBlt_Bloque.FieldName = "Blt_Bloque";
-            this.colBlt_Bloque.Name = "colBlt_Bloque";
-            this.colBlt_Bloque.Visible = true;
-            this.colBlt_Bloque.VisibleIndex = 8;
-            // 
-            // colBlt_Calidad
-            // 
-            this.colBlt_Calidad.Caption = "CALIDAD";
-            this.colBlt_Calidad.FieldName = "Blt_Calidad";
-            this.colBlt_Calidad.Name = "colBlt_Calidad";
-            this.colBlt_Calidad.Visible = true;
-            this.colBlt_Calidad.VisibleIndex = 9;
-            this.colBlt_Calidad.Width = 82;
-            // 
-            // colBlt_Calidad_Interna
-            // 
-            this.colBlt_Calidad_Interna.Caption = "CALIDAD INTERNA";
-            this.colBlt_Calidad_Interna.FieldName = "Blt_Calidad_Interna";
-            this.colBlt_Calidad_Interna.Name = "colBlt_Calidad_Interna";
-            this.colBlt_Calidad_Interna.Visible = true;
-            this.colBlt_Calidad_Interna.VisibleIndex = 10;
-            this.colBlt_Calidad_Interna.Width = 110;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,7 +1072,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RMSScaleSoftware";
+            this.Text = "RMS Revuelta App";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
@@ -1061,6 +1082,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTabControl)).EndInit();
             this.myTabControl.ResumeLayout(false);
+            this.monitorTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonitor)).EndInit();
+            this.basculasTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DsBasculas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewMaestroBasculas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMarca)).EndInit();
             this.reportesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -1076,17 +1108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.desdeDtp.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desdeDtp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DsBasculas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewReporte)).EndInit();
-            this.monitorTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonitor)).EndInit();
-            this.basculasTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewMaestroBasculas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1136,7 +1158,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBlt_Procede;
         private DevExpress.XtraGrid.Columns.GridColumn colBlt_Bloque;
         private DevExpress.XtraGrid.Columns.GridColumn colBlt_Calidad;
-        private DevExpress.XtraGrid.Columns.GridColumn colBlt_Calidad_Interna;
         private System.Data.DataTable dataTable2;
         private DevExpress.XtraNavBar.NavBarGroup monitorGroup;
         private DevExpress.XtraNavBar.NavBarGroup reportesGroup;
@@ -1182,6 +1203,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBLT_BRUTO;
         private DevExpress.XtraGrid.Columns.GridColumn colBLT_TARA;
         private DevExpress.XtraGrid.Columns.GridColumn colBLT_NETO;
+        private System.Data.DataColumn dataColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn colMarca;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cmbMarca;
 
     }
 }
