@@ -631,7 +631,7 @@ namespace MyDXApplication
 
                             string query = @" SELECT * FROM SipBecamo_Boletas BO
                                               INNER JOIN SipBecamo_Basculas BA ON (BA.Blt_Bodega = BO.Blt_Bodega)
-                                              WHERE BO.BLT_FECHA BETWEEN '{0} 00:00' AND '{1} 23:59:59'
+                                              WHERE BO.BLT_FECHA    
                                                     {2}
                                                     {3} 
                                               ORDER BY Blt_Fecha DESC ";
